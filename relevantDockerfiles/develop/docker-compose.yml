@@ -13,7 +13,7 @@ services:
     links:
       - mariadb
   mariadb:
-    image: "mariadb"
+    image: "jsurf/rpi-mariadb"
     env_file: database.env
     #volumes:
      # - "/var/lib/mysql/data:${MARIADB_DATA_DIR}"
