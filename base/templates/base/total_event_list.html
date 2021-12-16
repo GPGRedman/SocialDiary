@@ -1,0 +1,28 @@
+
+{% if request.user.is_authenticated %}
+    <p>{{ request.user }}</p>
+    <a href='{% url 'logout' %}'>Logout</a>
+    {% else %}
+    <a href='{% url 'login' %}'>Login</a>
+{%  endif %}
+
+<p> </p>
+<h1> Anti Social Events List {{ place }}</h1>
+<a href="{% url 'event-create' %}">Add an incident</a>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th></th>
+    </tr >
+    {% for event in events %}
+        <tr>
+            <td>{{ event.title }}</td>
+            <td><a href="{% url 'event' event.id %}">View</a></td>
+            <td><a href="{% url 'event-update' event.id %}">Edit</a></td>
+            <td><a href="{% url 'event-delete'  event.id%}">Delete</a></td>
+        </tr>
+    {% empty %}
+        <h3> Zero Incidents for this person</h3>
+    {% endfor %}
+</table>

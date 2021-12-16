@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p1o$@xfqzeqt-^%sxzsn8@800n(e1c3xfuzolq3)g5kwtytfu*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'newVersionSD.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django',
+        'USER': 'root',
+        'PASSWORD': 'gregncl',
+        'HOST': 'mariadb',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 

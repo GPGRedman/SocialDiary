@@ -5,3 +5,7 @@ WORKDIR /code
 COPY requirements.txt /code/
 RUN  pip install -r requirements.txt
 COPY . /code/
+COPY docker-entrypoint.sh /code/
+ENTRYPOINT ["/code/docker-entrypoint.sh"]
+CMD [ "python",  "manage.py runserver 0.0.0.0:8000"]
+EXPOSE 8000
