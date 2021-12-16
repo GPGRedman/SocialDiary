@@ -1,0 +1,6 @@
+<a href="{% url 'tasks' %}">Cancel the Delete</a>
+<form method="POST">
+        {% csrf_token %}
+    <p> you want to delete this incident? are ypu sure? "{{event}}"<p>
+    <input value="submit" value="Delete"/>
+</form>

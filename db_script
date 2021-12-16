@@ -1,0 +1,1 @@
+docker run --name mariadbcont -e MYSQL_ROOT_PASSWORD=gregncl -p 3306:3306 -d jsurf/rpi-mariadb
